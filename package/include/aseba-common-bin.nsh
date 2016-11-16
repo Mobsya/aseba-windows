@@ -166,8 +166,8 @@ Section "Simulations" SecSim
 	File "${ASEBA_BIN_STRIP}\asebaplayground.exe"
 	File "${ASEBA_SRC}\menu\windows\asebachallenge.ico"
 	File "${ASEBA_SRC}\menu\windows\asebaplayground.ico"
-	SetOutPath "$INSTDIR\examples"
-	File /r "${ASEBA_SRC}\targets\playground\examples\*"
+	;SetOutPath "$INSTDIR\examples"
+	;File /r "${ASEBA_SRC}\targets\playground\examples\*"
 	!endif ; FAKE_PACKAGE
 
 	; Populate the start menu
