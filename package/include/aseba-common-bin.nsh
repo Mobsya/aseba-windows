@@ -133,21 +133,21 @@ SectionGroup /e "!Aseba" GroupAseba
 		File "${ASEBA_DEP}\ssleay32.dll"
 
 		SetOutPath "$INSTDIR\sqldrivers"
-		File "${QTDIR}\plugins\sqldrivers\qsqlite4.dll"
+		File "${QTDIR}\share\qt4\plugins\sqldrivers\qsqlite4.dll"
 
 		SetOutPath "$INSTDIR\iconengines"
-		File "${QTDIR}\plugins\iconengines\qsvgicon4.dll"
+		File "${QTDIR}\share\qt4\plugins\iconengines\qsvgicon4.dll"
 
 		SetOutPath "$INSTDIR\imageformats"
-		File "${QTDIR}\plugins\imageformats\qsvg4.dll"
+		File "${QTDIR}\share\qt4\plugins\imageformats\qsvg4.dll"
 		
 		SetOutPath "$INSTDIR"
 		File "qt.conf"
 		SetOutPath "$INSTDIR\translations"
-		File "${QTDIR}\translations\qt_fr.qm"
-		File "${QTDIR}\translations\qt_de.qm"
-		File "${QTDIR}\translations\qt_es.qm"
-		File "${QTDIR}\translations\qt_ja.qm"
+		File "${QTDIR}\share\qt4\translations\qt_fr.qm"
+		File "${QTDIR}\share\qt4\translations\qt_de.qm"
+		File "${QTDIR}\share\qt4\translations\qt_es.qm"
+		File "${QTDIR}\share\qt4\translations\qt_ja.qm"
 		File "qt_it.qm"
 		
 		!endif ;FAKE_PACKAGE
