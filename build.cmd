@@ -20,7 +20,7 @@ pushd build\aseba
 cmake.exe -G "MinGW Makefiles"^
  -D "CMAKE_BUILD_TYPE=Release"^
  -D "dashel_DIR=%WORKSPACE%\build\dashel"^
- -D "enki_DIR"=%WORKSPACE%\build\enki"^
+ -D "enki_DIR=%WORKSPACE%\build\enki"^
  -D "LIBXML2_INCLUDE_DIR=%ASEBA_DEP%\libxml2\include"^
  -D "LIBXML2_LIBRARIES=%ASEBA_DEP%\libxml2\win32\bin.mingw\libxml2.a"^
  -D "QWT_INCLUDE_DIR=%ASEBA_DEP%\qwt\src"^
