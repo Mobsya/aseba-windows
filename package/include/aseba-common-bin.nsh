@@ -37,6 +37,7 @@ SectionGroup /e "!Aseba" GroupAseba
 			File "${ASEBA_SRC}\menu\windows\thymioupgrader.ico"
 			File "${ASEBA_SRC}\menu\windows\asebahelp.ico"
 			File "${ASEBA_SRC}\menu\windows\thymiownetconfig.ico"
+			File "${ASEBA_SRC}\menu\windows\thymiowebbridge.ico"
 			File "${ASEBA_BIN_STRIP}\thymioupgrader.exe"
 			File "${ASEBA_BIN_STRIP}\thymiovpl.exe"
 			File "${ASEBA_BIN_STRIP}\thymiownetconfig.exe"
@@ -98,12 +99,14 @@ SectionGroup /e "!Aseba" GroupAseba
 				; Aseba Thymio with auto-refresh
 				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\$(STR_Package_Name_Thymio).lnk" "$INSTDIR\asebastudio.exe" "-ar ser:name=Thymio-II" "$INSTDIR\asebastudiothymio.ico"
 				; Thymio VPL
-				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio VPL.lnk" "$INSTDIR\thymiovpl.exe" "-ar ser:name=Thymio-II" "$INSTDIR\thymiovpl.ico"
+				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio VPL.lnk" "$INSTDIR\thymiovpl.exe" "-ar ser:name=Thymio" "$INSTDIR\thymiovpl.ico"
 				; Thymio flasher 
 				; CreateDirectory "$SMPROGRAMS\$StartMenuFolder\Thymio Firmware Upgrader"
 				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio Firmware Upgrader.lnk" "$INSTDIR\thymioupgrader.exe" "" "$INSTDIR\thymioupgrader.ico"
 				; Thymio wireless configurator
 				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Wireless Thymio Network Configurator.lnk" "$INSTDIR\thymiownetconfig.exe" "" "$INSTDIR\thymiownetconfig.ico"
+				; Thymio asebahttp bridge
+				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio Web Bridge.lnk" "$INSTDIR\asebahttp.exe" "-v --autorestart ser:name=Thymio" "$INSTDIR\thymiowebbridge.ico"
 			${EndIf}
 		!insertmacro MUI_STARTMENU_WRITE_END
 	SectionEnd
