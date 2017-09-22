@@ -350,6 +350,25 @@ Section "-Install devcon" InstDevcon	; Hidden section -> always executed
 	${EndIf}
 SectionEnd
 
+Section "-Install Bonjour" InstBonjour	; Hidden section -> always executed
+	${If} $FullInstall == "true"
+		SetOutPath "$INSTDIR"
+		
+		File "${ASEBA_DEP}\bonjour\Bonjour.msi"
+		File "${ASEBA_DEP}\bonjour\Bonjour64.msi"
+		
+		${If} ${RunningX64}
+			DetailPrint $(Bonjour_64bits)
+			ExecWait '"msiexec" /i "$INSTDIR\Bonjour64.msi"  /passive'
+		${Else}
+			DetailPrint $(Bonjour_32bits)
+			ExecWait '"msiexec" /i "$INSTDIR\Bonjour.msi"  /passive'
+		${EndIf}
+				
+	${EndIf}
+SectionEnd
+
+
 Section "-PostInstall"
 	DetailPrint "Post install..."
 
