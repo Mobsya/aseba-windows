@@ -106,7 +106,7 @@ SectionGroup /e "!Aseba" GroupAseba
 				; Thymio wireless configurator
 				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Wireless Thymio Network Configurator.lnk" "$INSTDIR\thymiownetconfig.exe" "" "$INSTDIR\thymiownetconfig.ico"
 				; Thymio asebahttp bridge
-				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio Web Bridge.lnk" "$INSTDIR\asebahttp.exe" "-v --autorestart ser:name=Thymio" "$INSTDIR\thymiowebbridge.ico"
+				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio Web Bridge.lnk" "$INSTDIR\asebahttp.exe" "-v --autorestart -s 33333 ser:name=Thymio" "$INSTDIR\thymiowebbridge.ico"
 			${EndIf}
 		!insertmacro MUI_STARTMENU_WRITE_END
 	SectionEnd
