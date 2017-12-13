@@ -31,6 +31,7 @@ mkdir strip
 del /Q strip
 for /f %%F in ('dir *.exe /s /b') do (
 	objcopy.exe --strip-all %%F strip\%%~nxF
+	call :signBinary strip\%%~nxF
 )
 popd
 
@@ -43,3 +44,12 @@ makensis.exe^
  "/DQTDIR=%QTDIR%"^
  -- "%WORKSPACE%\source\package\aseba.nsi"
 move "%WORKSPACE%\source\package\*.exe" .
+
+
+call :signBinary *.exe
+GOTO:EOF
+
+
+:signBinary
+signtool sign /tr http://timestamp.digicert.com /td sha256 /fd sha256 /du "http://http://www.mobsya.org/" /n "Association Mobsya" /as %~1
+GOTO:EOF
