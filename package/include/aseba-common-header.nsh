@@ -52,7 +52,9 @@
   !define DRV_INF_WIN "${ASEBA_DEP}\thymio-drv\win_xp-7"
   !define DRV_INF_WIN8 "${ASEBA_DEP}\thymio-drv\win_8"
   !define DEVCON_SRC "${ASEBA_DEP}\devcon"
-    
+
+  !define THYMIO_BLOCKLY_DIR "..\..\build\thymio-blockly-standalone" ; local thymio-blocly app source.
+
   !define LOG_TO_FILE on 		; on / off. You need a special build of NSIS with logging enabled. To be downloaded on the NSIS website
   
   ShowInstDetails show
