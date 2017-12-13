@@ -38,6 +38,7 @@ SectionGroup /e "!Aseba" GroupAseba
 			File "${ASEBA_SRC}\menu\windows\asebahelp.ico"
 			File "${ASEBA_SRC}\menu\windows\thymiownetconfig.ico"
 			File "${ASEBA_SRC}\menu\windows\thymiowebbridge.ico"
+			File "${ASEBA_SRC}\menu\windows\scratchblock.ico"
 			File "${ASEBA_BIN_STRIP}\thymioupgrader.exe"
 			File "${ASEBA_BIN_STRIP}\thymiovpl.exe"
 			File "${ASEBA_BIN_STRIP}\thymiownetconfig.exe"
@@ -100,7 +101,9 @@ SectionGroup /e "!Aseba" GroupAseba
 				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\$(STR_Package_Name_Thymio).lnk" "$INSTDIR\asebastudio.exe" "-ar ser:name=Thymio-II" "$INSTDIR\asebastudiothymio.ico"
 				; Thymio VPL
 				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio VPL.lnk" "$INSTDIR\thymiovpl.exe" "-ar ser:name=Thymio" "$INSTDIR\thymiovpl.ico"
-				; Thymio flasher 
+				; Thymio Blockly
+				!insertmacro CreateInternetShortcut "$SMPROGRAMS\$StartMenuFolder\Thymio Blockly" "file://$INSTDIR/thymio-blockly-standalone/index.html" "$INSTDIR\scratchblock.ico" "0"
+				; Thymio flasher
 				; CreateDirectory "$SMPROGRAMS\$StartMenuFolder\Thymio Firmware Upgrader"
 				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio Firmware Upgrader.lnk" "$INSTDIR\thymioupgrader.exe" "" "$INSTDIR\thymioupgrader.ico"
 				; Thymio wireless configurator
@@ -109,6 +112,10 @@ SectionGroup /e "!Aseba" GroupAseba
 				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio Web Bridge.lnk" "$INSTDIR\asebahttp.exe" "--autorestart -s 33333 ser:name=Thymio" "$INSTDIR\thymiowebbridge.ico"
 			${EndIf}
 		!insertmacro MUI_STARTMENU_WRITE_END
+
+		SetOutPath "$INSTDIR\thymio-blockly-standalone"
+		File /a /r "${THYMIO_BLOCKLY_DIR}\*"
+
 	SectionEnd
 
 	Section "Qt4" SecQt

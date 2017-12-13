@@ -34,6 +34,9 @@ for /f %%F in ('dir *.exe /s /b') do (
 )
 popd
 
+powershell.exe -nologo -noprofile -command^
+	"& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('%ASEBA_DEP%/blockly/blockly.zip', 'build'); }"
+
 del /Q *.exe
 makensis.exe^
  "/DASEBA_DEP=%ASEBA_DEP%"^
