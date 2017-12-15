@@ -265,53 +265,6 @@ Section "-Install the driver" InstDriver	; Hidden section -> always executed
 			File "${DRV_INF_WIN8}\mchpcdcw.inf"
 			File "${DRV_INF_WIN8}\mchpcdc.cat"
 			File "${DRV_INF_WIN8}\mchpcdcw.cat"
-			File "${DRV_INF_WIN8}\certmgr_x86.exe"
-			File "${DRV_INF_WIN8}\certmgr_x64.exe"
-			File "${DRV_INF_WIN8}\mobsya.cer"
-
-			; We must install the security certificate in we are on Windows 8
-			DetailPrint "Installing the security certificate..."
-			${If} ${RunningX64}
-				ExecWait '"$INSTDIR\drivers\certmgr_x64.exe" -add -c "$INSTDIR\drivers\mobsya.cer" -s -r LocalMachine root' $0
-			${Else}
-				ExecWait '"$INSTDIR\drivers\certmgr_x86.exe" -add -c "$INSTDIR\drivers\mobsya.cer" -s -r LocalMachine root' $0
-			${EndIf}
-			DetailPrint "Done."
-			IntCmp $0 0x0 cert_ok8 cert_error8 cert_error8
-			cert_ok8:
-				DetailPrint "Certificate installed"
-				Goto cert_done8
-			cert_error8:
-				DetailPrint "A problem occured"
-			cert_done8:
-			; Done
-		${ElseIf} ${AtLeastWin7}
-			; Windows 7 or above
-			DetailPrint "We are on Windows 7 (or above)"
-			File "${DRV_INF_WIN}\mchpcdc.inf"
-			File "${DRV_INF_WIN}\mchpcdcw.inf"
-			File "${DRV_INF_WIN}\mchpcdc.cat"
-			File "${DRV_INF_WIN}\mchpcdcw.cat"
-			File "${DRV_INF_WIN8}\certmgr_x86.exe"
-			File "${DRV_INF_WIN8}\certmgr_x64.exe"
-			File "${DRV_INF_WIN8}\mobsya.cer"
-
-			; We must install the security certificate in we are on Windows 7
-			DetailPrint "Installing the security certificate..."
-			${If} ${RunningX64}
-				ExecWait '"$INSTDIR\drivers\certmgr_x64.exe" -add -c "$INSTDIR\drivers\mobsya.cer" -s -r LocalMachine root' $0
-			${Else}
-				ExecWait '"$INSTDIR\drivers\certmgr_x86.exe" -add -c "$INSTDIR\drivers\mobsya.cer" -s -r LocalMachine root' $0
-			${EndIf}
-			DetailPrint "Done."
-			IntCmp $0 0x0 cert_ok7 cert_error7 cert_error7
-			cert_ok7:
-				DetailPrint "Certificate installed"
-				Goto cert_done7
-			cert_error7:
-				DetailPrint "A problem occured"
-			cert_done7:
-			; Done
 		${Else}
 			; Other windows (XP)
 			DetailPrint "We are on Windows XP or above"
