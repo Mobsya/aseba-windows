@@ -35,6 +35,8 @@ for /f %%F in ('dir *.exe /s /b') do (
 )
 popd
 
+if exist "build\thymio-blockly-standalone\" rd /q /s "build\thymio-blockly-standalone"
+
 powershell.exe -nologo -noprofile -command^
 	"& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('%ASEBA_DEP%/blockly/blockly.zip', 'build'); }"
 
