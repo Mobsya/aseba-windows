@@ -97,10 +97,10 @@ SectionGroup /e "!Aseba" GroupAseba
 			${EndIf}
 			; Thymio stuff?
 			${If} $FullInstall == "true"
-				; Aseba Thymio with auto-refresh
-				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\$(STR_Package_Name_Thymio).lnk" "$INSTDIR\asebastudio.exe" "-ar ser:name=Thymio-II" "$INSTDIR\asebastudiothymio.ico"
+				; Aseba Thymio without auto-refresh
+				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\$(STR_Package_Name_Thymio).lnk" "$INSTDIR\asebastudio.exe" "ser:name=Thymio-II" "$INSTDIR\asebastudiothymio.ico"
 				; Thymio VPL
-				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio VPL.lnk" "$INSTDIR\thymiovpl.exe" "-ar ser:name=Thymio" "$INSTDIR\thymiovpl.ico"
+				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio VPL.lnk" "$INSTDIR\thymiovpl.exe" "ser:name=Thymio" "$INSTDIR\thymiovpl.ico"
 				; Thymio Blockly
 				!insertmacro CreateInternetShortcut "$SMPROGRAMS\$StartMenuFolder\Thymio Blockly" "file://$INSTDIR/thymio-blockly-standalone/index.html" "$INSTDIR\scratchblock.ico" "0"
 				; Thymio flasher
