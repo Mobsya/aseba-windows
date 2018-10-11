@@ -1,6 +1,6 @@
 [submodule "dashel"]
 	path = dashel
-	url = https://github.com/Mobsya/dashel.git
+	url = https://github.com/mobsya/dashel.git
 	branch = master
 [submodule "enki"]
 	path = enki
@@ -8,5 +8,5 @@
 	branch = aseba-1.6.x
 [submodule "aseba"]
 	path = aseba
-	url = https://github.com/Mobsya/aseba.git
+	url = https://github.com/mobsya/aseba.git
 	branch = release-1.6.x
