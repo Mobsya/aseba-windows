@@ -1,7 +1,7 @@
 [submodule "dashel"]
 	path = dashel
 	url = https://github.com/mobsya/dashel.git
-	branch = release-1.6
+	branch = master
 [submodule "enki"]
 	path = enki
 	url = https://github.com/enki-community/enki.git
