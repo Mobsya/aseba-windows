@@ -4,7 +4,7 @@
 	branch = release-1.6.x
 [submodule "enki"]
 	path = enki
-	url = https://github.com/enki-community/enki.git
+	url = https://github.com/mobsya/enki.git
 	branch = aseba-1.6.x
 [submodule "aseba"]
 	path = aseba
