@@ -139,7 +139,8 @@ SectionGroup /e "!Aseba" GroupAseba
 		File "${QTDIR}\bin\QtWebKit4.dll"
 		File "${QTDIR}\bin\libpng16-16.dll"
 		File "${QTDIR}\bin\zlib1.dll"
-		File "${QTDIR}\bin\libsqlite3-0.dll"	
+		File "${QTDIR}\bin\libsqlite3-0.dll"
+		File "${QTDIR}\bin\QtDBus4.dll"
 			
 		File "${ASEBA_DEP}\qwt\lib\qwt5.dll"
 		File "${ASEBA_DEP}\SDL.dll"
