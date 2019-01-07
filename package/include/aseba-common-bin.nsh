@@ -240,6 +240,7 @@ SectionGroup /e $(NAME_GroupCLI) GroupCLI
 		File "${ASEBA_BIN_STRIP}\asebadummynode.exe"
 		File "${ASEBA_BIN_STRIP}\asebashell.exe"
 		File "${ASEBA_BIN_STRIP}\asebamassloader.exe"
+		File "${ASEBA_BIN_STRIP}\asebamedulla.exe"
 		!endif ; FAKE_PACKAGE
 
 		SetShellVarContext all		; current / all. Install program for all users
